@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  background: #111;
+  font-family: Arial, sans-serif;
+}
+
+@media print {
+  body {
+    padding: 0;
+    background: white;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}

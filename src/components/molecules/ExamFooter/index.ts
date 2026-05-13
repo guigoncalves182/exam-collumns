@@ -1,0 +1,1 @@
+export { ExamFooter } from './ExamFooter'

@@ -1,0 +1,1 @@
+export { ExamContent } from './ExamContent'

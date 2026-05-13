@@ -1,0 +1,8 @@
+export const PAGE_HEIGHT = 1122
+export const HEADER_HEIGHT = 120
+export const FOOTER_HEIGHT = 80
+export const CONTENT_PADDING = 32
+export const GAP = 8
+
+export const AVAILABLE_HEIGHT =
+  PAGE_HEIGHT - HEADER_HEIGHT - FOOTER_HEIGHT - CONTENT_PADDING
