@@ -14,7 +14,7 @@ export function Exam({ exam, columns = 2 }: ExamProps) {
 
   return (
     <div className={styles.examContainer}>
-      <MeasureRoot ref={measureRef} chunks={chunks} columns={columns} />
+      <MeasureRoot ref={measureRef} chunks={chunks} columns={columns} exam={exam} />
 
       {pages.map((page, pageIndex) => (
         <Page

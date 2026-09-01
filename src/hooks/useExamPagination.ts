@@ -34,7 +34,9 @@ export function useExamPagination(questions: IExamPrintQuestion[], columns: Colu
         height: measureRef.current!.getMeasurement(chunk.id),
       }))
 
-      setPages(paginateChunks(measuredChunks, columns))
+      const availableHeight = measureRef.current.getAvailableHeight()
+
+      setPages(paginateChunks(measuredChunks, columns, availableHeight))
     }
 
     build()

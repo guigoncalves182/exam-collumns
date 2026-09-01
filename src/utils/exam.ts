@@ -27,14 +27,9 @@ export function createChunks(question: IExamPrintQuestion, index: number): Chunk
 }
 
 function createEmptyPage(columnCount: ColumnCount): PageData {
-  if (columnCount === 1) {
-    return { columns: [{ height: 0, items: [] }] }
-  }
+  const count = Math.max(1, Math.floor(columnCount))
   return {
-    columns: [
-      { height: 0, items: [] },
-      { height: 0, items: [] },
-    ],
+    columns: Array.from({ length: count }, () => ({ height: 0, items: [] })),
   }
 }
 
@@ -165,11 +160,33 @@ function splitChunk(
   return [firstPart, secondPart]
 }
 
-export function paginateChunks(measuredChunks: MeasuredChunk[], columnCount: ColumnCount = 2): PageData[] {
+/**
+ * Minimum height (px) that the beginning of a statement must occupy in the same
+ * column as its header, so the header is never left orphaned.
+ */
+const MIN_STATEMENT_START = 60
+
+/**
+ * A chunk can be safely split across columns only when it is plain flowing
+ * content (text). Chunks containing images (or other embedded media) must never
+ * be split, otherwise the HTML tag would be cut and the media broken/hidden.
+ */
+function isSplittable(chunk: MeasuredChunk): boolean {
+  if (chunk.type !== 'statement' && chunk.type !== 'alternative') return false
+  return !/<img\b|<svg\b|<picture\b|<video\b/i.test(chunk.content)
+}
+
+export function paginateChunks(
+  measuredChunks: MeasuredChunk[],
+  columnCount: ColumnCount = 2,
+  availableHeight: number = AVAILABLE_HEIGHT
+): PageData[] {
+  const count = Math.max(1, Math.floor(columnCount))
+  const usableHeight = availableHeight > 0 ? availableHeight : AVAILABLE_HEIGHT
   const pages: PageData[] = []
-  let page = createEmptyPage(columnCount)
+  let page = createEmptyPage(count)
   let columnIndex = 0
-  const maxColumnIndex = columnCount - 1
+  const maxColumnIndex = count - 1
 
   // Work with a copy to avoid mutating the input
   const queue = [...measuredChunks]
@@ -184,7 +201,7 @@ export function paginateChunks(measuredChunks: MeasuredChunk[], columnCount: Col
       return
     }
     pages.push(page)
-    page = createEmptyPage(columnCount)
+    page = createEmptyPage(count)
     columnIndex = 0
   }
 
@@ -193,16 +210,35 @@ export function paginateChunks(measuredChunks: MeasuredChunk[], columnCount: Col
     const chunk = queue[i]
     const column = currentColumn()
 
-    // If this is a header, ensure it won't be orphaned from the statement.
-    // The header must always be placed together with at least the start of the statement.
+    // If this is a header ("Questão X" + divider), it must never be orphaned:
+    // it can only stay in the current column if at least the start of its
+    // statement can follow it here. Otherwise, move the header to the next
+    // column/page so it travels together with the statement.
     if (chunk.type === 'header') {
-      const headerHeight = chunk.height + GAP
-      // Minimum space needed: header + at least 60px of statement content
-      const minNeeded = headerHeight + 60
-      const remainingForHeader = AVAILABLE_HEIGHT - column.height - GAP
+      // Space left for the statement AFTER placing this header in the column.
+      const spaceAfterHeader =
+        usableHeight - column.height - (chunk.height + GAP) - GAP
 
-      if (remainingForHeader < minNeeded && column.items.length > 0) {
-        // Not enough room for header + start of statement — move to next column
+      const statement = queue[i + 1]
+      let canStartStatement: boolean
+
+      if (!statement || statement.type !== 'statement') {
+        // Defensive: no statement follows — just require some room.
+        canStartStatement = spaceAfterHeader >= MIN_STATEMENT_START
+      } else if (isSplittable(statement)) {
+        // Divisible text: only the beginning needs to fit here.
+        canStartStatement =
+          spaceAfterHeader >= Math.min(MIN_STATEMENT_START, statement.height)
+      } else {
+        // Non-divisible statement (e.g. contains an image): the WHOLE statement
+        // must fit alongside the header, otherwise they must move together.
+        canStartStatement = spaceAfterHeader >= statement.height
+      }
+
+      // Only relocate when the column already has content. If the column is
+      // empty and it still doesn't fit, place it here anyway (the statement is
+      // then force-placed later) to avoid an infinite loop.
+      if (!canStartStatement && column.items.length > 0) {
         nextColumn()
         continue
       }
@@ -215,18 +251,18 @@ export function paginateChunks(measuredChunks: MeasuredChunk[], columnCount: Col
     }
 
     // Chunk fits in current column
-    if (column.height + chunk.height + GAP <= AVAILABLE_HEIGHT) {
+    if (column.height + chunk.height + GAP <= usableHeight) {
       column.items.push(chunk)
       column.height += chunk.height + GAP
       i++
       continue
     }
 
-    const remainingHeight = AVAILABLE_HEIGHT - column.height - GAP
+    const remainingHeight = usableHeight - column.height - GAP
 
-    // Chunk doesn't fit — check if it's a statement or alternative that can be split
+    // Chunk doesn't fit — check if it's splittable flowing text (never split media)
     // and there's meaningful space remaining in the current column (at least 60px)
-    if ((chunk.type === 'statement' || chunk.type === 'alternative') && remainingHeight >= 60) {
+    if (isSplittable(chunk) && remainingHeight >= 60) {
       const [firstPart, secondPart] = splitChunk(chunk, remainingHeight)
       column.items.push(firstPart)
       column.height += firstPart.height + GAP
@@ -242,7 +278,7 @@ export function paginateChunks(measuredChunks: MeasuredChunk[], columnCount: Col
     nextColumn()
 
     // Safety: if chunk is taller than a full column, force-place it to avoid infinite loop
-    if (chunk.height > AVAILABLE_HEIGHT) {
+    if (chunk.height > usableHeight) {
       currentColumn().items.push(chunk)
       currentColumn().height += chunk.height + GAP
       i++
