@@ -1,33 +1,102 @@
 import type { ExamHeaderProps } from './ExamHeader.interface'
-import styles from '../../../styles/Exam.module.css'
+import { BrandLogo } from '../../atoms/BrandLogo'
+import { PrintTypography } from '../../atoms/PrintTypography'
+import { VersionPill } from '../../atoms/VersionPill'
+import { PrintAlert } from '../../atoms/PrintAlert'
+import { HeaderField } from '../HeaderField'
+import {
+  CodeBox,
+  FieldsRow,
+  FieldsSection,
+  HeaderContainer,
+  LogoAndId,
+  TypeAndPeriod,
+  VersionBox,
+} from './ExamHeader.styles'
 
-export function ExamHeader({ exam }: ExamHeaderProps) {
-  const { examInfo, code, evaluationType, version, maxScore } = exam
-  const campus = exam.campusName ?? examInfo.campusName
+const HEADER_LABELS = {
+  evaluationCode: 'Código da Avaliação',
+  name: 'Nome:',
+  enrollment: 'Matrícula:',
+  discipline: 'Disciplina:',
+  instructor: 'Prof.:',
+  class: 'Tur.:',
+  date: 'Data:',
+  dateValue: '           /      /           ',
+  campus: 'Unid.:',
+  campusUnavailable: 'Informação indisponível',
+} as const
+
+export function ExamHeader({ exam, studentName = '', studentEnrollment = '' }: ExamHeaderProps) {
+  const { examInfo, code, evaluationType, version } = exam
+  const campus = exam.campusName ?? examInfo.campusName ?? HEADER_LABELS.campusUnavailable
 
   return (
-    <div className={styles.header}>
-      <div className={styles.headerTop}>
-        <div className={styles.headerInfo}>
-          <strong>{examInfo.disciplineName}</strong>
-          <span>Código: {examInfo.disciplineCode}</span>
-          <span>Turma: {examInfo.classCode} | Período: {examInfo.classPeriod}</span>
-        </div>
-        <div className={styles.headerMeta}>
-          <span>{evaluationType} — Versão {version}</span>
-          <span>Cód. Prova: {code}</span>
-          <span>Valor: {maxScore} pts</span>
-        </div>
-      </div>
-      <div className={styles.headerBottom}>
-        {campus && <span>{campus}</span>}
-        {examInfo.responsibleInstructor && (
-          <span>Prof.: {examInfo.responsibleInstructor}</span>
-        )}
-        <div className={styles.studentName}>
-          Nome:__________________________________________
-        </div>
-      </div>
-    </div>
+    <HeaderContainer>
+      <LogoAndId>
+        <BrandLogo alt={`${examInfo.tenant} logo`} />
+
+        <CodeBox>
+          <PrintTypography color="DarkLow" fontSize="9px" fontWeight={400}>
+            {HEADER_LABELS.evaluationCode}
+          </PrintTypography>
+          <PrintTypography color="DarkPure" fontSize="16px" fontWeight={700}>
+            {code}
+          </PrintTypography>
+        </CodeBox>
+
+        <VersionBox>
+          <TypeAndPeriod>
+            <PrintTypography color="DarkPure" fontSize="16px" fontWeight={700}>
+              {evaluationType}
+            </PrintTypography>
+            <PrintTypography color="DarkLow" fontSize="9px" fontWeight={400}>
+              {examInfo.classPeriod}
+            </PrintTypography>
+          </TypeAndPeriod>
+          <VersionPill version={version} />
+        </VersionBox>
+      </LogoAndId>
+
+      <FieldsSection>
+        {Array.from({ length: 1 }, (_, index) => (
+          <FieldsRow key={index}>
+            <HeaderField fields={[{ label: HEADER_LABELS.name, value: studentName, truncate: true }]} />
+            <HeaderField
+              boxWidth="200px"
+              fields={[{ label: HEADER_LABELS.enrollment, value: studentEnrollment, truncate: true }]}
+            />
+          </FieldsRow>
+        ))}
+
+        <FieldsRow>
+          <HeaderField
+            fields={[{ label: HEADER_LABELS.discipline, value: examInfo.disciplineName, truncate: true }]}
+          />
+          <HeaderField
+            boxWidth="320px"
+            fields={[{ label: HEADER_LABELS.instructor, value: examInfo.responsibleInstructor, truncate: true }]}
+          />
+        </FieldsRow>
+
+        <FieldsRow>
+          <HeaderField
+            justify="space-between"
+            fields={[
+              { label: HEADER_LABELS.campus, value: campus, truncate: true },
+              { label: HEADER_LABELS.class, value: examInfo.classCode },
+            ]}
+          />
+          <HeaderField
+            boxWidth="200px"
+            fields={[{ label: HEADER_LABELS.date, value: HEADER_LABELS.dateValue }]}
+          />
+        </FieldsRow>
+      </FieldsSection>
+
+      {examInfo.alert && (
+        <PrintAlert title={examInfo.alert.title} message={examInfo.alert.message} />
+      )}
+    </HeaderContainer>
   )
 }

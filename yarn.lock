@@ -2,6 +2,15 @@
 # yarn lockfile v1
 
 
+"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.29.7":
+  version "7.29.7"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@babel/code-frame/-/code-frame-7.29.7.tgz#f2fbbfea87c44a21590ec515b778b2c26d8866e7"
+  integrity sha1-8vu/6ofESiFZDsUVt3iywm2IZuc=
+  dependencies:
+    "@babel/helper-validator-identifier" "^7.29.7"
+    js-tokens "^4.0.0"
+    picocolors "^1.1.1"
+
 "@babel/code-frame@^7.28.6", "@babel/code-frame@^7.29.0":
   version "7.29.0"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.29.0.tgz#7cd7a59f15b3cc0dcd803038f7792712a7d0b15c"
@@ -48,6 +57,17 @@
     "@jridgewell/trace-mapping" "^0.3.28"
     jsesc "^3.0.2"
 
+"@babel/generator@^7.29.8":
+  version "7.29.8"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@babel/generator/-/generator-7.29.8.tgz#4b0b887885422643339e09022148a4c4ebaa4979"
+  integrity sha1-SwuIeIVCJkMzngkCIUikxOuqSXk=
+  dependencies:
+    "@babel/parser" "^7.29.8"
+    "@babel/types" "^7.29.8"
+    "@jridgewell/gen-mapping" "^0.3.12"
+    "@jridgewell/trace-mapping" "^0.3.28"
+    jsesc "^3.0.2"
+
 "@babel/helper-compilation-targets@^7.28.6":
   version "7.28.6"
   resolved "https://registry.yarnpkg.com/@babel/helper-compilation-targets/-/helper-compilation-targets-7.28.6.tgz#32c4a3f41f12ed1532179b108a4d746e105c2b25"
@@ -63,6 +83,19 @@
   version "7.28.0"
   resolved "https://registry.yarnpkg.com/@babel/helper-globals/-/helper-globals-7.28.0.tgz#b9430df2aa4e17bc28665eadeae8aa1d985e6674"
   integrity sha512-+W6cISkXFa1jXsDEdYA8HeevQT/FULhxzR99pxphltZcVaugps53THCeiWA8SguxxpSp3gKPiuYfSWopkLQ4hw==
+
+"@babel/helper-globals@^7.29.7":
+  version "7.29.7"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@babel/helper-globals/-/helper-globals-7.29.7.tgz#f04a96fbd8473241b1079243f5b3f03a3010ab7b"
+  integrity sha1-8EqW+9hHMkGxB5JD9bPwOjAQq3s=
+
+"@babel/helper-module-imports@^7.16.7":
+  version "7.29.7"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@babel/helper-module-imports/-/helper-module-imports-7.29.7.tgz#ef25048a518e828d7393fac5882ddd73921d7396"
+  integrity sha1-7yUEilGOgo1zk/rFiC3dc5Idc5Y=
+  dependencies:
+    "@babel/traverse" "^7.29.7"
+    "@babel/types" "^7.29.7"
 
 "@babel/helper-module-imports@^7.28.6":
   version "7.28.6"
@@ -86,10 +119,20 @@
   resolved "https://registry.yarnpkg.com/@babel/helper-string-parser/-/helper-string-parser-7.27.1.tgz#54da796097ab19ce67ed9f88b47bb2ec49367687"
   integrity sha512-qMlSxKbpRlAridDExk92nSobyDdpPijUq2DW6oDnUqd0iOGxmQjyqhMIihI9+zv4LPyZdRje2cavWPbCbWm3eA==
 
+"@babel/helper-string-parser@^7.29.7":
+  version "7.29.7"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@babel/helper-string-parser/-/helper-string-parser-7.29.7.tgz#7f0871d99824d23137d60f86fcf6130fd5a1b51f"
+  integrity sha1-fwhx2Zgk0jE31g+G/PYTD9WhtR8=
+
 "@babel/helper-validator-identifier@^7.28.5":
   version "7.28.5"
   resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.28.5.tgz#010b6938fab7cb7df74aa2bbc06aa503b8fe5fb4"
   integrity sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==
+
+"@babel/helper-validator-identifier@^7.29.7":
+  version "7.29.7"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@babel/helper-validator-identifier/-/helper-validator-identifier-7.29.7.tgz#bd87084ced0c796ec46bda492de6e83d29e89fc2"
+  integrity sha1-vYcITO0MeW7Ea9pJLeboPSnon8I=
 
 "@babel/helper-validator-option@^7.27.1":
   version "7.27.1"
@@ -111,6 +154,18 @@
   dependencies:
     "@babel/types" "^7.29.0"
 
+"@babel/parser@^7.29.7", "@babel/parser@^7.29.8":
+  version "7.29.8"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@babel/parser/-/parser-7.29.8.tgz#9653716a2f10c677b98fbc63d4bfb000c302cf17"
+  integrity sha1-llNxai8Qxne5j7xj1L+wAMMCzxc=
+  dependencies:
+    "@babel/types" "^7.29.8"
+
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3":
+  version "7.29.7"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@babel/runtime/-/runtime-7.29.7.tgz#12022450c45a4da6d8d8287b18a4ff2ddb23f768"
+  integrity sha1-EgIkUMRaTabY2Ch7GKT/Ldsj92g=
+
 "@babel/template@^7.28.6":
   version "7.28.6"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.28.6.tgz#0e7e56ecedb78aeef66ce7972b082fce76a23e57"
@@ -119,6 +174,15 @@
     "@babel/code-frame" "^7.28.6"
     "@babel/parser" "^7.28.6"
     "@babel/types" "^7.28.6"
+
+"@babel/template@^7.29.7":
+  version "7.29.7"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@babel/template/-/template-7.29.7.tgz#4d9d4004f645cdd304de958c725162784ecac700"
+  integrity sha1-TZ1ABPZFzdME3pWMclFieE7KxwA=
+  dependencies:
+    "@babel/code-frame" "^7.29.7"
+    "@babel/parser" "^7.29.7"
+    "@babel/types" "^7.29.7"
 
 "@babel/traverse@^7.28.6", "@babel/traverse@^7.29.0":
   version "7.29.0"
@@ -133,6 +197,19 @@
     "@babel/types" "^7.29.0"
     debug "^4.3.1"
 
+"@babel/traverse@^7.29.7":
+  version "7.29.8"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@babel/traverse/-/traverse-7.29.8.tgz#4111014cdc71a0f95d9471907590baa0b8a6b28a"
+  integrity sha1-QREBTNxxoPldlHGQdZC6oLimsoo=
+  dependencies:
+    "@babel/code-frame" "^7.29.7"
+    "@babel/generator" "^7.29.8"
+    "@babel/helper-globals" "^7.29.7"
+    "@babel/parser" "^7.29.8"
+    "@babel/template" "^7.29.7"
+    "@babel/types" "^7.29.8"
+    debug "^4.3.1"
+
 "@babel/types@^7.28.6", "@babel/types@^7.29.0":
   version "7.29.0"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.29.0.tgz#9f5b1e838c446e72cf3cd4b918152b8c605e37c7"
@@ -140,6 +217,14 @@
   dependencies:
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.28.5"
+
+"@babel/types@^7.29.7", "@babel/types@^7.29.8":
+  version "7.29.8"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@babel/types/-/types-7.29.8.tgz#1229eef31d85156d70fa3f4cd859376d0eaf6863"
+  integrity sha1-Einu8x2FFW1w+j9M2Fk3bQ6vaGM=
+  dependencies:
+    "@babel/helper-string-parser" "^7.29.7"
+    "@babel/helper-validator-identifier" "^7.29.7"
 
 "@emnapi/core@1.10.0":
   version "1.10.0"
@@ -162,6 +247,113 @@
   integrity sha512-uTII7OYF+/Mes/MrcIOYp5yOtSMLBWSIoLPpcgwipoiKbli6k322tcoFsxoIIxPDqW01SQGAgko4EzZi2BNv2w==
   dependencies:
     tslib "^2.4.0"
+
+"@emotion/babel-plugin@^11.13.5":
+  version "11.13.5"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/babel-plugin/-/babel-plugin-11.13.5.tgz#eab8d65dbded74e0ecfd28dc218e75607c4e7bc0"
+  integrity sha1-6rjWXb3tdODs/SjcIY51YHxOe8A=
+  dependencies:
+    "@babel/helper-module-imports" "^7.16.7"
+    "@babel/runtime" "^7.18.3"
+    "@emotion/hash" "^0.9.2"
+    "@emotion/memoize" "^0.9.0"
+    "@emotion/serialize" "^1.3.3"
+    babel-plugin-macros "^3.1.0"
+    convert-source-map "^1.5.0"
+    escape-string-regexp "^4.0.0"
+    find-root "^1.1.0"
+    source-map "^0.5.7"
+    stylis "4.2.0"
+
+"@emotion/cache@^11.14.0":
+  version "11.14.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/cache/-/cache-11.14.0.tgz#ee44b26986eeb93c8be82bb92f1f7a9b21b2ed76"
+  integrity sha1-7kSyaYbuuTyL6Cu5Lx96myGy7XY=
+  dependencies:
+    "@emotion/memoize" "^0.9.0"
+    "@emotion/sheet" "^1.4.0"
+    "@emotion/utils" "^1.4.2"
+    "@emotion/weak-memoize" "^0.4.0"
+    stylis "4.2.0"
+
+"@emotion/hash@^0.9.2":
+  version "0.9.2"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/hash/-/hash-0.9.2.tgz#ff9221b9f58b4dfe61e619a7788734bd63f6898b"
+  integrity sha1-/5IhufWLTf5h5hmneIc0vWP2iYs=
+
+"@emotion/is-prop-valid@^1.3.0":
+  version "1.4.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/is-prop-valid/-/is-prop-valid-1.4.0.tgz#e9ad47adff0b5c94c72db3669ce46de33edf28c0"
+  integrity sha1-6a1Hrf8LXJTHLbNmnORt4z7fKMA=
+  dependencies:
+    "@emotion/memoize" "^0.9.0"
+
+"@emotion/memoize@^0.9.0":
+  version "0.9.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/memoize/-/memoize-0.9.0.tgz#745969d649977776b43fc7648c556aaa462b4102"
+  integrity sha1-dFlp1kmXd3a0P8dkjFVqqkYrQQI=
+
+"@emotion/react@^11.14.0":
+  version "11.14.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/react/-/react-11.14.0.tgz#cfaae35ebc67dd9ef4ea2e9acc6cd29e157dd05d"
+  integrity sha1-z6rjXrxn3Z706i6azGzSnhV90F0=
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@emotion/babel-plugin" "^11.13.5"
+    "@emotion/cache" "^11.14.0"
+    "@emotion/serialize" "^1.3.3"
+    "@emotion/use-insertion-effect-with-fallbacks" "^1.2.0"
+    "@emotion/utils" "^1.4.2"
+    "@emotion/weak-memoize" "^0.4.0"
+    hoist-non-react-statics "^3.3.1"
+
+"@emotion/serialize@^1.3.3":
+  version "1.3.3"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/serialize/-/serialize-1.3.3.tgz#d291531005f17d704d0463a032fe679f376509e8"
+  integrity sha1-0pFTEAXxfXBNBGOgMv5nnzdlCeg=
+  dependencies:
+    "@emotion/hash" "^0.9.2"
+    "@emotion/memoize" "^0.9.0"
+    "@emotion/unitless" "^0.10.0"
+    "@emotion/utils" "^1.4.2"
+    csstype "^3.0.2"
+
+"@emotion/sheet@^1.4.0":
+  version "1.4.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/sheet/-/sheet-1.4.0.tgz#c9299c34d248bc26e82563735f78953d2efca83c"
+  integrity sha1-ySmcNNJIvCboJWNzX3iVPS78qDw=
+
+"@emotion/styled@^11.14.0":
+  version "11.14.1"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/styled/-/styled-11.14.1.tgz#8c34bed2948e83e1980370305614c20955aacd1c"
+  integrity sha1-jDS+0pSOg+GYA3AwVhTCCVWqzRw=
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@emotion/babel-plugin" "^11.13.5"
+    "@emotion/is-prop-valid" "^1.3.0"
+    "@emotion/serialize" "^1.3.3"
+    "@emotion/use-insertion-effect-with-fallbacks" "^1.2.0"
+    "@emotion/utils" "^1.4.2"
+
+"@emotion/unitless@^0.10.0":
+  version "0.10.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/unitless/-/unitless-0.10.0.tgz#2af2f7c7e5150f497bdabd848ce7b218a27cf745"
+  integrity sha1-KvL3x+UVD0l72r2EjOeyGKJ890U=
+
+"@emotion/use-insertion-effect-with-fallbacks@^1.2.0":
+  version "1.2.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/use-insertion-effect-with-fallbacks/-/use-insertion-effect-with-fallbacks-1.2.0.tgz#8a8cb77b590e09affb960f4ff1e9a89e532738bf"
+  integrity sha1-ioy3e1kOCa/7lg9P8emonlMnOL8=
+
+"@emotion/utils@^1.4.2":
+  version "1.4.2"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/utils/-/utils-1.4.2.tgz#6df6c45881fcb1c412d6688a311a98b7f59c1b52"
+  integrity sha1-bfbEWIH8scQS1miKMRqYt/WcG1I=
+
+"@emotion/weak-memoize@^0.4.0":
+  version "0.4.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@emotion/weak-memoize/-/weak-memoize-0.4.0.tgz#5e13fac887f08c44f76b0ccaf3370eb00fec9bb6"
+  integrity sha1-XhP6yIfwjET3awzK8zcOsA/sm7Y=
 
 "@eslint-community/eslint-utils@^4.8.0", "@eslint-community/eslint-utils@^4.9.1":
   version "4.9.1"
@@ -280,6 +472,11 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
+
+"@lift/design-tokens@1.5.3":
+  version "1.5.3"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@lift/design-tokens/-/design-tokens-1.5.3.tgz#596d435cf21d64565d6148749042c6c470aa6400"
+  integrity sha1-WW1DXPIdZFZdYUh0kELGxHCqZAA=
 
 "@napi-rs/wasm-runtime@^1.1.4":
   version "1.1.4"
@@ -410,6 +607,11 @@
   integrity sha512-GUUEShf+PBCGW2KaXwcIt3Yk+e3pkKwWKb9GSyM9WQVE+ep2jzmHdGsHzu4wgcZy5fN9FBdVzjpBQsYlpfpgLA==
   dependencies:
     undici-types "~7.16.0"
+
+"@types/parse-json@^4.0.0":
+  version "4.0.2"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/@types/parse-json/-/parse-json-4.0.2.tgz#5950e50960793055845e956c427fc2b0d70c5239"
+  integrity sha1-WVDlCWB5MFWEXpVsQn/CsNcMUjk=
 
 "@types/react-dom@^19.2.3":
   version "19.2.3"
@@ -546,6 +748,15 @@ ajv@^6.14.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+babel-plugin-macros@^3.1.0:
+  version "3.1.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/babel-plugin-macros/-/babel-plugin-macros-3.1.0.tgz#9ef6dc74deb934b4db344dc973ee851d148c50c1"
+  integrity sha1-nvbcdN65NLTbNE3Jc+6FHRSMUME=
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    cosmiconfig "^7.0.0"
+    resolve "^1.19.0"
+
 balanced-match@^4.0.2:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-4.0.4.tgz#bfb10662feed8196a2c62e7c68e17720c274179a"
@@ -574,15 +785,36 @@ browserslist@^4.24.0:
     node-releases "^2.0.36"
     update-browserslist-db "^1.2.3"
 
+callsites@^3.0.0:
+  version "3.1.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/callsites/-/callsites-3.1.0.tgz#b3630abd8943432f54b3f0519238e33cd7df2f73"
+  integrity sha1-s2MKvYlDQy9Us/BRkjjjPNffL3M=
+
 caniuse-lite@^1.0.30001782:
   version "1.0.30001792"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001792.tgz#ca8bb9be244835a335e2018272ce7223691873c5"
   integrity sha512-hVLMUZFgR4JJ6ACt1uEESvQN1/dBVqPAKY0hgrV70eN3391K6juAfTjKZLKvOMsx8PxA7gsY1/tLMMTcfFLLpw==
 
+convert-source-map@^1.5.0:
+  version "1.9.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/convert-source-map/-/convert-source-map-1.9.0.tgz#7faae62353fb4213366d0ca98358d22e8368b05f"
+  integrity sha1-f6rmI1P7QhM2bQypg1jSLoNosF8=
+
 convert-source-map@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-2.0.0.tgz#4b560f649fc4e918dd0ab75cf4961e8bc882d82a"
   integrity sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==
+
+cosmiconfig@^7.0.0:
+  version "7.1.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/cosmiconfig/-/cosmiconfig-7.1.0.tgz#1443b9afa596b670082ea46cbd8f6a62b84635f6"
+  integrity sha1-FEO5r6WWtnAILqRsvY9qYrhGNfY=
+  dependencies:
+    "@types/parse-json" "^4.0.0"
+    import-fresh "^3.2.1"
+    parse-json "^5.0.0"
+    path-type "^4.0.0"
+    yaml "^1.10.0"
 
 cross-spawn@^7.0.6:
   version "7.0.6"
@@ -593,7 +825,7 @@ cross-spawn@^7.0.6:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-csstype@^3.2.2:
+csstype@^3.0.2, csstype@^3.2.2:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.2.3.tgz#ec48c0f3e993e50648c86da559e2610995cf989a"
   integrity sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==
@@ -619,6 +851,18 @@ electron-to-chromium@^1.5.328:
   version "1.5.354"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.354.tgz#a155a4ff0009ff225d46ea2ef7037ba48e6601fb"
   integrity sha512-JaBHwWcfIdmSAfWM5l3uwjGd431j8YEMikZ+K/2nXVuBqJKyZ0f+2h4n4JY5AyNiZmnY9qQr2RU3v9DxDmHMNg==
+
+error-ex@^1.3.1:
+  version "1.3.4"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/error-ex/-/error-ex-1.3.4.tgz#b3a8d8bb6f92eecc1629e3e27d3c8607a8a32414"
+  integrity sha1-s6jYu2+S7swWKePifTyGB6ijJBQ=
+  dependencies:
+    is-arrayish "^0.2.1"
+
+es-errors@^1.3.0:
+  version "1.3.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/es-errors/-/es-errors-1.3.0.tgz#05f75a25dab98e4fb1dcd5e1472c0546d5057c8f"
+  integrity sha1-BfdaJdq5jk+x3NXhRywFRtUFfI8=
 
 escalade@^3.2.0:
   version "3.2.0"
@@ -762,6 +1006,11 @@ file-entry-cache@^8.0.0:
   dependencies:
     flat-cache "^4.0.0"
 
+find-root@^1.1.0:
+  version "1.1.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/find-root/-/find-root-1.1.0.tgz#abcfc8ba76f708c42a97b3d685b7e9450bfb9ce4"
+  integrity sha1-q8/Iunb3CMQql7PWhbfpRQv7nOQ=
+
 find-up@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-5.0.0.tgz#4c92819ecb7083561e4f4a240a86be5198f536fc"
@@ -788,6 +1037,11 @@ fsevents@~2.3.3:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
+function-bind@^1.1.2:
+  version "1.1.2"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/function-bind/-/function-bind-1.1.2.tgz#2c02d864d97f3ea6c8830c464cbd11ab6eab7a1c"
+  integrity sha1-LALYZNl/PqbIgwxGTL0Rq26rehw=
+
 gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.2.tgz#32a6ee76c3d7f52d46b2b1ae5d93fea8580a25e0"
@@ -805,6 +1059,13 @@ globals@^17.6.0:
   resolved "https://registry.yarnpkg.com/globals/-/globals-17.6.0.tgz#0f0be018d5cca8690e6375ead1f65c4bb96191fc"
   integrity sha512-sepffkT8stwnIYbsMBpoCHJuJM5l98FUF2AnE07hfvE0m/qp3R586hw4jF4uadbhvg1ooIdzuu7CsfD2jzCaNA==
 
+hasown@^2.0.3:
+  version "2.0.4"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/hasown/-/hasown-2.0.4.tgz#8c62d8cb90beb2aad5d0a5b67581ad9854c3f003"
+  integrity sha1-jGLYy5C+sqrV0KW2dYGtmFTD8AM=
+  dependencies:
+    function-bind "^1.1.2"
+
 hermes-estree@0.25.1:
   version "0.25.1"
   resolved "https://registry.yarnpkg.com/hermes-estree/-/hermes-estree-0.25.1.tgz#6aeec17d1983b4eabf69721f3aa3eb705b17f480"
@@ -817,6 +1078,13 @@ hermes-parser@^0.25.1:
   dependencies:
     hermes-estree "0.25.1"
 
+hoist-non-react-statics@^3.3.1:
+  version "3.3.2"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+  integrity sha1-7OCsr3HWLClpwuxZ/v9CpLGoW0U=
+  dependencies:
+    react-is "^16.7.0"
+
 ignore@^5.2.0:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.3.2.tgz#3cd40e729f3643fd87cb04e50bf0eb722bc596f5"
@@ -827,10 +1095,30 @@ ignore@^7.0.5:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-7.0.5.tgz#4cb5f6cd7d4c7ab0365738c7aea888baa6d7efd9"
   integrity sha512-Hs59xBNfUIunMFgWAbGX5cq6893IbWg4KnrjbYwX3tx0ztorVgTDA6B2sxf8ejHJ4wz8BqGUMYlnzNBer5NvGg==
 
+import-fresh@^3.2.1:
+  version "3.3.1"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/import-fresh/-/import-fresh-3.3.1.tgz#9cecb56503c0ada1f2741dbbd6546e4b13b57ccf"
+  integrity sha1-nOy1ZQPAraHydB271lRuSxO1fM8=
+  dependencies:
+    parent-module "^1.0.0"
+    resolve-from "^4.0.0"
+
 imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==
+
+is-arrayish@^0.2.1:
+  version "0.2.1"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
+  integrity sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0=
+
+is-core-module@^2.16.1:
+  version "2.16.2"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/is-core-module/-/is-core-module-2.16.2.tgz#3e07450a8080ebce3fbf0cac494f4d2ab324e082"
+  integrity sha1-PgdFCoCA684/vwysSU9NKrMk4II=
+  dependencies:
+    hasown "^2.0.3"
 
 is-extglob@^2.1.1:
   version "2.1.1"
@@ -863,6 +1151,11 @@ json-buffer@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/json-buffer/-/json-buffer-3.0.1.tgz#9338802a30d3b6605fbe0613e094008ca8c05a13"
   integrity sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==
+
+json-parse-even-better-errors@^2.3.0:
+  version "2.3.1"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz#7c47805a94319928e05777405dc12e1f7a4ee02d"
+  integrity sha1-fEeAWpQxmSjgV3dAXcEuH3pO4C0=
 
 json-schema-traverse@^0.4.1:
   version "0.4.1"
@@ -968,6 +1261,11 @@ lightningcss@^1.32.0:
     lightningcss-win32-arm64-msvc "1.32.0"
     lightningcss-win32-x64-msvc "1.32.0"
 
+lines-and-columns@^1.1.6:
+  version "1.2.4"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"
+  integrity sha1-7KKE910pZQeTCdwK2SVauy68FjI=
+
 locate-path@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-6.0.0.tgz#55321eb309febbc59c4801d931a72452a681d286"
@@ -1035,6 +1333,23 @@ p-locate@^5.0.0:
   dependencies:
     p-limit "^3.0.2"
 
+parent-module@^1.0.0:
+  version "1.0.1"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/parent-module/-/parent-module-1.0.1.tgz#691d2709e78c79fae3a156622452d00762caaaa2"
+  integrity sha1-aR0nCeeMefrjoVZiJFLQB2LKqqI=
+  dependencies:
+    callsites "^3.0.0"
+
+parse-json@^5.0.0:
+  version "5.2.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/parse-json/-/parse-json-5.2.0.tgz#c76fc66dee54231c962b22bcc8a72cf2f99753cd"
+  integrity sha1-x2/Gbe5UIxyWKyK8yKcs8vmXU80=
+  dependencies:
+    "@babel/code-frame" "^7.0.0"
+    error-ex "^1.3.1"
+    json-parse-even-better-errors "^2.3.0"
+    lines-and-columns "^1.1.6"
+
 path-exists@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/path-exists/-/path-exists-4.0.0.tgz#513bdbe2d3b95d7762e8c1137efa195c6c61b5b3"
@@ -1044,6 +1359,16 @@ path-key@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-3.1.1.tgz#581f6ade658cbba65a0d3380de7753295054f375"
   integrity sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==
+
+path-parse@^1.0.7:
+  version "1.0.7"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha1-+8EUtgykKzDZ2vWFjkvWi77bZzU=
+
+path-type@^4.0.0:
+  version "4.0.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
+  integrity sha1-hO0BwKe6OAr+CdkKjBgNzZ0DBDs=
 
 picocolors@^1.1.1:
   version "1.1.1"
@@ -1081,10 +1406,30 @@ react-dom@^19.2.6:
   dependencies:
     scheduler "^0.27.0"
 
+react-is@^16.7.0:
+  version "16.13.1"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
+  integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
+
 react@^19.2.6:
   version "19.2.6"
   resolved "https://registry.yarnpkg.com/react/-/react-19.2.6.tgz#3dadb8e12b2a7934c1d5317973e5dce1301f9a4d"
   integrity sha512-sfWGGfavi0xr8Pg0sVsyHMAOziVYKgPLNrS7ig+ivMNb3wbCBw3KxtflsGBAwD3gYQlE/AEZsTLgToRrSCjb0Q==
+
+resolve-from@^4.0.0:
+  version "4.0.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/resolve-from/-/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
+  integrity sha1-SrzYUq0y3Xuqv+m0DgCjbbXzkuY=
+
+resolve@^1.19.0:
+  version "1.22.12"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/resolve/-/resolve-1.22.12.tgz#f5b2a680897c69c238a13cd16b15671f8b73549f"
+  integrity sha1-9bKmgIl8acI4oTzRaxVnH4tzVJ8=
+  dependencies:
+    es-errors "^1.3.0"
+    is-core-module "^2.16.1"
+    path-parse "^1.0.7"
+    supports-preserve-symlinks-flag "^1.0.0"
 
 rolldown@1.0.0:
   version "1.0.0"
@@ -1141,6 +1486,21 @@ source-map-js@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
   integrity sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==
+
+source-map@^0.5.7:
+  version "0.5.7"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
+  integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
+
+stylis@4.2.0:
+  version "4.2.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/stylis/-/stylis-4.2.0.tgz#79daee0208964c8fe695a42fcffcac633a211a51"
+  integrity sha1-edruAgiWTI/mlaQvz/ysYzohGlE=
+
+supports-preserve-symlinks-flag@^1.0.0:
+  version "1.0.0"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
+  integrity sha1-btpL00SjyUrqN21MwxvHcxEDngk=
 
 tinyglobby@^0.2.15, tinyglobby@^0.2.16:
   version "0.2.16"
@@ -1231,6 +1591,11 @@ yallist@^3.0.2:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-3.1.1.tgz#dbb7daf9bfd8bac9ab45ebf602b8cbad0d5d08fd"
   integrity sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==
+
+yaml@^1.10.0:
+  version "1.10.3"
+  resolved "https://arquiteturaestacio.pkgs.visualstudio.com/Sirius/_packaging/sirius-feed/npm/registry/yaml/-/yaml-1.10.3.tgz#76e407ed95c42684fb8e14641e5de62fe65bbcb3"
+  integrity sha1-duQH7ZXEJoT7jhRkHl3mL+ZbvLM=
 
 yocto-queue@^0.1.0:
   version "0.1.0"

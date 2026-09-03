@@ -1,28 +1,25 @@
 import type { ExamContentProps } from './ExamContent.interface'
 import { Column } from '../../molecules/Column'
-import styles from '../../../styles/Exam.module.css'
+import { Content, ContentSingle } from './ExamContent.styles'
 
 export function ExamContent({ page }: ExamContentProps) {
   const columnCount = page.columns.length
 
   if (columnCount === 1) {
     return (
-      <div className={styles.contentSingle}>
+      <ContentSingle>
         {page.columns.map((col, idx) => (
           <Column key={idx} items={col.items} />
         ))}
-      </div>
+      </ContentSingle>
     )
   }
 
   return (
-    <div
-      className={styles.content}
-      style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}
-    >
+    <Content style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}>
       {page.columns.map((col, idx) => (
         <Column key={idx} items={col.items} />
       ))}
-    </div>
+    </Content>
   )
 }

@@ -58,7 +58,4 @@ export interface PageData {
   columns: ColumnData[]
 }
 
-/**
- * Number of columns per page. Supports any integer >= 1 (1, 2, 3, ...).
- */
 export type ColumnCount = number

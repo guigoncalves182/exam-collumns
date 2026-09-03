@@ -3,13 +3,16 @@ import type { MeasureRootHandle, MeasureRootProps } from './MeasureRoot.interfac
 import { Chunk } from '../../atoms/Chunk'
 import { ExamHeader } from '../ExamHeader'
 import { ExamFooter } from '../ExamFooter'
+import { PageFrame } from '../../organisms/Page/Page.styles'
+import { Content } from '../../organisms/ExamContent/ExamContent.styles'
+import { ColumnWrapper } from '../Column/Column.styles'
+import { MeasureRootWrapper } from './MeasureRoot.styles'
 import {
   getColumnContentWidth,
   CONTENT_PADDING,
   COLUMN_PADDING_VERTICAL,
   AVAILABLE_HEIGHT,
 } from '../../../constants/exam'
-import styles from '../../../styles/Exam.module.css'
 
 export const MeasureRoot = forwardRef<MeasureRootHandle, MeasureRootProps>(
   function MeasureRoot({ chunks, columns = 2, exam }, ref) {
@@ -33,16 +36,16 @@ export const MeasureRoot = forwardRef<MeasureRootHandle, MeasureRootProps>(
     }))
 
     return (
-      <div className={styles.measureRoot}>
+      <MeasureRootWrapper>
         {/* Hidden full-page frame: measures the REAL content area height that
             remains after the actual header and footer are rendered. */}
-        <div className={styles.page}>
+        <PageFrame>
           <ExamHeader exam={exam} />
-          <div ref={contentRef} className={styles.content}>
-            <div className={styles.column} />
-          </div>
+          <Content ref={contentRef}>
+            <ColumnWrapper />
+          </Content>
           <ExamFooter currentPage={1} totalPages={1} />
-        </div>
+        </PageFrame>
 
         {/* Off-screen chunk measurement at the real per-column width */}
         <div style={{ width: `${getColumnContentWidth(columns)}px` }}>
@@ -57,7 +60,7 @@ export const MeasureRoot = forwardRef<MeasureRootHandle, MeasureRootProps>(
             </div>
           ))}
         </div>
-      </div>
+      </MeasureRootWrapper>
     )
   }
 )

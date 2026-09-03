@@ -122,7 +122,7 @@ export const EXAM_MOCK: IExamPrint = {
           {
             id: "q5c",
             description:
-              '<sup>1</sup>&frasl;<sub>e</sub> &nbsp;<img src="https://picsum.photos/seed/frac/60/30" alt="fração 1 sobre e" />',
+              '<sup>1</sup>&frasl;<sub>e</sub> &nbsp;<img src="https://picsum.photos/seed/frac/160/30" alt="fração 1 sobre e" />',
             correctResponse: true,
           },
           { id: "q5d", description: "0" },

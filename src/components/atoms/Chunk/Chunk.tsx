@@ -1,32 +1,26 @@
 import type { ChunkProps } from './Chunk.interface'
-import styles from '../../../styles/Exam.module.css'
+import { Alternative, ChunkWrapper, QuestionHeader, Statement } from './Chunk.styles'
 
 export function Chunk({ chunk }: ChunkProps) {
   if (chunk.type === 'header') {
     return (
-      <div className={styles.chunk}>
-        <div className={styles.questionHeader}>{chunk.content}</div>
-      </div>
+      <ChunkWrapper>
+        <QuestionHeader>{chunk.content}</QuestionHeader>
+      </ChunkWrapper>
     )
   }
 
   if (chunk.type === 'statement') {
     return (
-      <div className={styles.chunk}>
-        <div
-          className={styles.statement}
-          dangerouslySetInnerHTML={{ __html: chunk.content }}
-        />
-      </div>
+      <ChunkWrapper>
+        <Statement dangerouslySetInnerHTML={{ __html: chunk.content }} />
+      </ChunkWrapper>
     )
   }
 
   return (
-    <div className={styles.chunk}>
-      <div
-        className={styles.alternative}
-        dangerouslySetInnerHTML={{ __html: chunk.content }}
-      />
-    </div>
+    <ChunkWrapper>
+      <Alternative dangerouslySetInnerHTML={{ __html: chunk.content }} />
+    </ChunkWrapper>
   )
 }

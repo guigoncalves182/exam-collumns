@@ -1,13 +1,13 @@
 import type { ColumnProps } from './Column.interface'
 import { Chunk } from '../../atoms/Chunk'
-import styles from '../../../styles/Exam.module.css'
+import { ColumnWrapper } from './Column.styles'
 
 export function Column({ items }: ColumnProps) {
   return (
-    <div className={styles.column}>
+    <ColumnWrapper>
       {items.map((chunk) => (
         <Chunk key={chunk.id} chunk={chunk} />
       ))}
-    </div>
+    </ColumnWrapper>
   )
 }
