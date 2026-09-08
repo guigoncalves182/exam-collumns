@@ -59,15 +59,13 @@ export function ExamHeader({ exam, studentName = '', studentEnrollment = '' }: E
       </LogoAndId>
 
       <FieldsSection>
-        {Array.from({ length: 1 }, (_, index) => (
-          <FieldsRow key={index}>
-            <HeaderField fields={[{ label: HEADER_LABELS.name, value: studentName, truncate: true }]} />
-            <HeaderField
-              boxWidth="200px"
-              fields={[{ label: HEADER_LABELS.enrollment, value: studentEnrollment, truncate: true }]}
-            />
-          </FieldsRow>
-        ))}
+        <FieldsRow>
+          <HeaderField fields={[{ label: HEADER_LABELS.name, value: studentName, truncate: true }]} />
+          <HeaderField
+            boxWidth="200px"
+            fields={[{ label: HEADER_LABELS.enrollment, value: studentEnrollment, truncate: true }]}
+          />
+        </FieldsRow>
 
         <FieldsRow>
           <HeaderField

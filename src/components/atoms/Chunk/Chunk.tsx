@@ -1,5 +1,12 @@
+import type { ReactElement } from 'react'
+import { MathJax } from 'better-react-mathjax'
 import type { ChunkProps } from './Chunk.interface'
 import { Alternative, ChunkWrapper, QuestionHeader, Statement } from './Chunk.styles'
+import { hasMathContent } from '../../../utils/exam'
+
+function withMath(needsMath: boolean, node: ReactElement): ReactElement {
+  return needsMath ? <MathJax dynamic>{node}</MathJax> : node
+}
 
 export function Chunk({ chunk }: ChunkProps) {
   if (chunk.type === 'header') {
@@ -10,17 +17,19 @@ export function Chunk({ chunk }: ChunkProps) {
     )
   }
 
+  const needsMath = hasMathContent(chunk.content)
+
   if (chunk.type === 'statement') {
     return (
       <ChunkWrapper>
-        <Statement dangerouslySetInnerHTML={{ __html: chunk.content }} />
+        {withMath(needsMath, <Statement dangerouslySetInnerHTML={{ __html: chunk.content }} />)}
       </ChunkWrapper>
     )
   }
 
   return (
     <ChunkWrapper>
-      <Alternative dangerouslySetInnerHTML={{ __html: chunk.content }} />
+      {withMath(needsMath, <Alternative dangerouslySetInnerHTML={{ __html: chunk.content }} />)}
     </ChunkWrapper>
   )
 }

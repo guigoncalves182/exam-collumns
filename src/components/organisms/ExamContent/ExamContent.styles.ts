@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { COLUMN_GAP, CONTENT_PADDING_X } from '../../../constants/exam'
+import { COLUMN_GAP, CONTENT_PADDING_X } from '../../../constants/exam.constants'
 
 export const Content = styled.div`
   flex: 1;

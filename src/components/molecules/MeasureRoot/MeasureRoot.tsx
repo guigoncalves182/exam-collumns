@@ -12,7 +12,7 @@ import {
   CONTENT_PADDING,
   COLUMN_PADDING_VERTICAL,
   AVAILABLE_HEIGHT,
-} from '../../../constants/exam'
+} from '../../../constants/exam.constants'
 
 export const MeasureRoot = forwardRef<MeasureRootHandle, MeasureRootProps>(
   function MeasureRoot({ chunks, columns = 2, exam }, ref) {
@@ -27,9 +27,6 @@ export const MeasureRoot = forwardRef<MeasureRootHandle, MeasureRootProps>(
       getAvailableHeight() {
         const el = contentRef.current
         if (!el) return AVAILABLE_HEIGHT
-        // clientHeight includes the content padding but not borders/margins.
-        // Subtract the content padding and the column's own vertical padding to
-        // get the real space available for stacking chunks inside a column.
         const available = el.clientHeight - CONTENT_PADDING - COLUMN_PADDING_VERTICAL
         return available > 0 ? available : AVAILABLE_HEIGHT
       },
@@ -37,8 +34,6 @@ export const MeasureRoot = forwardRef<MeasureRootHandle, MeasureRootProps>(
 
     return (
       <MeasureRootWrapper>
-        {/* Hidden full-page frame: measures the REAL content area height that
-            remains after the actual header and footer are rendered. */}
         <PageFrame>
           <ExamHeader exam={exam} />
           <Content ref={contentRef}>
@@ -47,7 +42,6 @@ export const MeasureRoot = forwardRef<MeasureRootHandle, MeasureRootProps>(
           <ExamFooter currentPage={1} totalPages={1} />
         </PageFrame>
 
-        {/* Off-screen chunk measurement at the real per-column width */}
         <div style={{ width: `${getColumnContentWidth(columns)}px` }}>
           {chunks.map((chunk) => (
             <div

@@ -1,74 +1,56 @@
-# React + TypeScript + Vite
+# exam
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Protótipo de montagem e impressão de prova. Renderiza uma prova em páginas A4, paginando o conteúdo em colunas com medição real de altura, e imprime pelo navegador (`Ctrl+P` / Salvar como PDF).
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React + TypeScript + Vite
+- Emotion (`@emotion/react` / `@emotion/styled`) para estilo
+- Tokens do design system Lift (`@lift/design-tokens`)
+- MathJax via `better-react-mathjax` (fórmulas TeX)
 
-## React Compiler
+## Scripts
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn dev      # ambiente de desenvolvimento
+yarn build    # type-check + build de produção
+yarn lint     # eslint
+yarn preview  # preview do build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Estrutura
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Componentes seguem atomic design em `src/components` (`atoms`, `molecules`, `organisms`, `templates`). Cada componente tem `Componente.tsx`, `Componente.styles.ts`, `Componente.interface.ts` e `index.ts`.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- `templates/Exam` — compõe a prova (medição + páginas)
+- `organisms/Page`, `organisms/ExamContent` — página A4 e área de conteúdo em colunas
+- `molecules/ExamHeader`, `molecules/ExamFooter`, `molecules/HeaderField`, `molecules/Column`, `molecules/MeasureRoot`
+- `atoms/Chunk`, `atoms/PrintTypography`, `atoms/VersionPill`, `atoms/BrandLogo`, `atoms/PrintAlert`
+- `hooks/useExamPagination.ts` — orquestra medição e paginação
+- `utils/exam.ts` — geração de chunks e algoritmo de paginação
+- `constants/exam.ts` — dimensões A4 e layout
+- `styles/theme.ts` — tema Emotion a partir dos tokens Lift
+- `config/mathjax.ts` — configuração do MathJax
+- `mocks/exam.ts` — prova de exemplo
+
+## Como funciona
+
+1. Cada questão é quebrada em chunks (cabeçalho, enunciado, alternativas).
+2. O `MeasureRoot` renderiza os chunks fora da tela para medir a altura real, aguardando fontes, imagens e o MathJax.
+3. `paginateChunks` distribui os chunks em colunas/páginas, sem cortar tags HTML, imagens ou fórmulas, e evitando cabeçalho órfão.
+4. As páginas são renderizadas em quadros A4; a impressão usa o diálogo do navegador.
+
+## API principal
+
+```tsx
+import { Exam } from './components/templates/Exam'
+
+<Exam exam={examData} columns={1} />
 ```
-# exam-collumns
+
+- `exam: IExamPrint` — dados da prova
+- `columns: number` — quantidade de colunas por página (padrão 2)
+
+## Impressão
+
+O layout usa dimensões reais de A4 e `@media print`. O `MeasureRoot` é ocultado na impressão e a quebra de página não é aplicada na última página, evitando folha em branco no final.

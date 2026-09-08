@@ -18,7 +18,6 @@ export const EXAM_MOCK: IExamPrint = {
     responsibleInstructor: "Prof. Dr. Carlos Eduardo Silva",
     campusName: "Campus Maracanã",
     questions: [
-      // Q1 — Enunciado longo e contextualizado (texto real) + alternativas curtas
       {
         id: "q1",
         description:
@@ -32,32 +31,30 @@ export const EXAM_MOCK: IExamPrint = {
         alternatives: [
           { id: "q1a", description: "8 veículos" },
           { id: "q1b", description: "10 veículos" },
-          { id: "q1c", description: "12 veículos", correctResponse: true },
+          { id: "q1c", description: "12 veículos" },
           { id: "q1d", description: "14 veículos" },
           { id: "q1e", description: "16 veículos" },
         ],
       },
 
-      // Q2 — Fórmula (HTML sup) + imagem ilustrativa no enunciado
       {
         id: "q2",
         description:
-          'Calcule a derivada de <em>f(x) = 3x<sup>4</sup> − 2x<sup>3</sup> + 7x − 5</em>.<br/>' +
+          'Calcule a derivada de <span class="math-tex">\\(f(x) = 3x^{4} - 2x^{3} + 7x - 5\\)</span>.<br/>' +
           '<img src="https://picsum.photos/seed/calc1/300/120" alt="gráfico da função polinomial" />',
         alternatives: [
           {
             id: "q2a",
-            description: "f'(x) = 12x<sup>3</sup> − 6x<sup>2</sup> + 7",
+            description: '<span class="math-tex">\\(f\'(x) = 12x^{3} - 6x^{2} + 7\\)</span>',
             correctResponse: true,
           },
-          { id: "q2b", description: "f'(x) = 12x<sup>3</sup> − 6x<sup>2</sup> + 7x" },
-          { id: "q2c", description: "f'(x) = 3x<sup>3</sup> − 2x<sup>2</sup> + 7" },
-          { id: "q2d", description: "f'(x) = 12x<sup>4</sup> − 6x<sup>3</sup> + 7x" },
-          { id: "q2e", description: "f'(x) = 12x<sup>3</sup> − 6x<sup>2</sup> − 5" },
+          { id: "q2b", description: '<span class="math-tex">\\(f\'(x) = 12x^{3} - 6x^{2} + 7x\\)</span>' },
+          { id: "q2c", description: '<span class="math-tex">\\(f\'(x) = 3x^{3} - 2x^{2} + 7\\)</span>' },
+          { id: "q2d", description: '<span class="math-tex">\\(f\'(x) = 12x^{4} - 6x^{3} + 7x\\)</span>' },
+          { id: "q2e", description: '<span class="math-tex">\\(f\'(x) = 12x^{3} - 6x^{2} - 5\\)</span>' },
         ],
       },
 
-      // Q3 — Fórmula + imagem (área sob a curva) no enunciado
       {
         id: "q3",
         description:
@@ -76,7 +73,6 @@ export const EXAM_MOCK: IExamPrint = {
         ],
       },
 
-      // Q4 — Enunciado com imagem + alternativas que são gráficos (imagens nas alternativas)
       {
         id: "q4",
         description:
@@ -109,7 +105,6 @@ export const EXAM_MOCK: IExamPrint = {
         ],
       },
 
-      // Q5 — Fórmula + imagem no enunciado + imagem em uma das alternativas
       {
         id: "q5",
         description:
@@ -130,20 +125,19 @@ export const EXAM_MOCK: IExamPrint = {
         ],
       },
 
-      // Q6 — Enunciado curto + integral definida
       {
         id: "q6",
-        description: "Determine o valor da integral definida ∫₀² (2x + 1) dx.",
+        description:
+          'Determine o valor da integral definida <span class="math-tex">\\(\\int_{0}^{2} (2x + 1)\\,dx\\)</span>.',
         alternatives: [
           { id: "q6a", description: "4" },
           { id: "q6b", description: "5" },
-          { id: "q6c", description: "6", correctResponse: true },
+          { id: "q6c", description: "6" },
           { id: "q6d", description: "7" },
           { id: "q6e", description: "8" },
         ],
       },
 
-      // Q7 — Enunciado longo e contextualizado coerente com a resposta (série geométrica)
       {
         id: "q7",
         description:
@@ -156,41 +150,39 @@ export const EXAM_MOCK: IExamPrint = {
           "<em>a₁/(1 − r)</em>, para qual valor essa série converge?",
         alternatives: [
           { id: "q7a", description: "1" },
-          { id: "q7b", description: "2", correctResponse: true },
+          { id: "q7b", description: "2" },
           { id: "q7c", description: "1/2" },
           { id: "q7d", description: "∞ (diverge)" },
           { id: "q7e", description: "3/2" },
         ],
       },
 
-      // Q8 — Fórmula com raiz + alternativas curtas com notação de intervalo
       {
         id: "q8",
-        description: "Qual é o domínio da função <em>f(x) = √(4 − x<sup>2</sup>)</em>?",
+        description:
+          'Qual é o domínio da função <span class="math-tex">\\(f(x) = \\sqrt{4 - x^{2}}\\)</span>?',
         alternatives: [
-          { id: "q8a", description: "x ∈ ℝ" },
-          { id: "q8b", description: "x ∈ [−2, 2]", correctResponse: true },
-          { id: "q8c", description: "x ∈ (0, 4)" },
-          { id: "q8d", description: "x ∈ [−4, 4]" },
-          { id: "q8e", description: "x &gt; 0" },
+          { id: "q8a", description: '<span class="math-tex">\\(x \\in \\mathbb{R}\\)</span>' },
+          { id: "q8b", description: '<span class="math-tex">\\(x \\in [-2, 2]\\)</span>' },
+          { id: "q8c", description: '<span class="math-tex">\\(x \\in (0, 4)\\)</span>' },
+          { id: "q8d", description: '<span class="math-tex">\\(x \\in [-4, 4]\\)</span>' },
+          { id: "q8e", description: '<span class="math-tex">\\(x > 0\\)</span>' },
         ],
       },
 
-      // Q9 — Limite com fração (L'Hôpital) + alternativas curtas
       {
         id: "q9",
         description:
-          "Aplicando a regra de L'Hôpital, calcule <em>lim<sub>x→0</sub> sen(x)&frasl;x</em>.",
+          'Aplicando a regra de L\'Hôpital, calcule <span class="math-tex">\\(\\lim_{x \\to 0} \\dfrac{\\operatorname{sen}(x)}{x}\\)</span>.',
         alternatives: [
           { id: "q9a", description: "0" },
-          { id: "q9b", description: "1", correctResponse: true },
+          { id: "q9b", description: "1" },
           { id: "q9c", description: "∞" },
           { id: "q9d", description: "−1" },
           { id: "q9e", description: "Não existe" },
         ],
       },
 
-      // Q10 — Texto médio + função exponencial + imagem no enunciado
       {
         id: "q10",
         description:
@@ -200,10 +192,33 @@ export const EXAM_MOCK: IExamPrint = {
           '<img src="https://picsum.photos/seed/exp_graph/320/160" alt="gráfico de e elevado a x" />',
         alternatives: [
           { id: "q10a", description: "ℝ" },
-          { id: "q10b", description: "(0, +∞)", correctResponse: true },
+          { id: "q10b", description: "(0, +∞)" },
           { id: "q10c", description: "[0, +∞)" },
           { id: "q10d", description: "(−∞, 0)" },
           { id: "q10e", description: "[1, +∞)" },
+        ],
+      },
+
+      {
+        id: "q11",
+        description:
+          "<strong>Situação-problema.</strong> Considere a dedução abaixo, que aparece no " +
+          "cálculo da radiação de corpo negro (integral de Bose–Einstein). Analise cada " +
+          "passagem da igualdade e assinale o valor final correto da integral:<br/>" +
+          '<span class="math-tex">\\[\\begin{aligned}' +
+          ' S &= \\int_{0}^{\\infty} \\frac{x^{3}}{e^{x}-1}\\,dx' +
+          ' = \\int_{0}^{\\infty} x^{3} \\sum_{n=1}^{\\infty} e^{-nx}\\,dx \\\\' +
+          ' &= \\sum_{n=1}^{\\infty} \\int_{0}^{\\infty} x^{3} e^{-nx}\\,dx' +
+          ' = \\sum_{n=1}^{\\infty} \\frac{3!}{n^{4}} \\\\' +
+          ' &= 6 \\sum_{n=1}^{\\infty} \\frac{1}{n^{4}}' +
+          ' = 6\\,\\zeta(4) = 6 \\cdot \\frac{\\pi^{4}}{90} = \\frac{\\pi^{4}}{15}' +
+          ' \\end{aligned}\\]</span>',
+        alternatives: [
+          { id: "q11a", description: '<span class="math-tex">\\(\\dfrac{\\pi^{4}}{15}\\)</span>' },
+          { id: "q11b", description: '<span class="math-tex">\\(\\dfrac{\\pi^{4}}{90}\\)</span>' },
+          { id: "q11c", description: '<span class="math-tex">\\(6\\,\\zeta(4)\\)</span>' },
+          { id: "q11d", description: '<span class="math-tex">\\(\\dfrac{\\pi^{2}}{6}\\)</span>' },
+          { id: "q11e", description: '<span class="math-tex">\\(\\infty\\ (\\text{diverge})\\)</span>' },
         ],
       },
     ],
